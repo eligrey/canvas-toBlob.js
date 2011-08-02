@@ -2,7 +2,7 @@
  * A canvas.toBlob() implementation.
  * 2011-07-13
  * 
- * By Eli Grey, http://eligrey.com
+ * By Eli Grey, http://eligrey.com and Devin Samarin, https://github.com/eboyjr
  * License: X11/MIT
  *   See LICENSE.md
  */
