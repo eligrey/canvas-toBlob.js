@@ -70,8 +70,10 @@ if (Uint8Array) {
 }
 if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
 	HTMLCanvasElement.prototype.toBlob = function(callback, type /*, ...args*/) {
-		if (!type) {
+		  if (!type) {
 			type = "image/png";
+		} if (this.mozGetAsFile) {
+			return this.mozGetAsFile("canvas", type);
 		}
 		var
 			  args = Array.prototype.slice.call(arguments, 1)
