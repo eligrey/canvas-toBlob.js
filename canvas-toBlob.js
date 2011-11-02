@@ -73,7 +73,8 @@ if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
 		  if (!type) {
 			type = "image/png";
 		} if (this.mozGetAsFile) {
-			return this.mozGetAsFile("canvas", type);
+			callback(this.mozGetAsFile("canvas", type));
+			return;
 		}
 		var
 			  args = Array.prototype.slice.call(arguments, 1)
