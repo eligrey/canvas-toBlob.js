@@ -82,13 +82,11 @@ if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
 			, header_end = dataURI.indexOf(",")
 			, data = dataURI.substring(header_end + 1)
 			, is_base64 = is_base64_regex.test(dataURI.substring(0, header_end))
-			, BlobBuilder = view.BlobBuilder || view.WebKitBlobBuilder || view.MozBlobBuilder
-			, bb = new BlobBuilder
 			, blob
 		;
-		if (BlobBuilder.fake) {
+		if (Blob.fake) {
 			// no reason to decode a data: URI that's just going to become a data URI again
-			blob = bb.getBlob(type);
+			blob = new Blob
 			if (is_base64) {
 				blob.encoding = "base64";
 			} else {
@@ -98,11 +96,10 @@ if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
 			blob.size = data.length;
 		} else if (Uint8Array) {
 			if (is_base64) {
-				bb.append(decode_base64(data));
+				blob = new Blob([decode_base64(data)], {type: type});
 			} else {
-				bb.append(decodeURIComponent(data));
+				blob = new Blob([decodeURIComponent(data)], {type: type});
 			}
-			blob = bb.getBlob(type);
 		}
 		callback(blob);
 	};
