@@ -56,7 +56,7 @@ var
 		// 2/3 chance there's going to be some null bytes at the end, but that
 		// doesn't really matter with most image formats.
 		// If it somehow matters for you, truncate the buffer up outptr.
-		return buffer.buffer;
+		return buffer;
 	}
 ;
 if (Uint8Array) {
