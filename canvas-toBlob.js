@@ -69,7 +69,8 @@ if (Uint8Array) {
 	]);
 }
 if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
-	HTMLCanvasElement.prototype.toBlob = function(callback, type /*, ...args*/) {
+	HTMLCanvasElement.prototype.toBlob = HTMLCanvasElement.prototype.toBlobHD =
+	function(callback, type /*, ...args*/) {
 		  if (!type) {
 			type = "image/png";
 		} if (this.mozGetAsFile) {
