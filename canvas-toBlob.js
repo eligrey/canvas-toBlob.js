@@ -18,7 +18,9 @@
 var
 	  Uint8Array = view.Uint8Array
 	, HTMLCanvasElement = view.HTMLCanvasElement
+	, canvas_proto = HTMLCanvasElement || HTMLCanvasElement.prototype
 	, is_base64_regex = /\s*;\s*base64\s*(?:;|$)/i
+	, to_data_url = "toDataURL"
 	, base64_ranks
 	, decode_base64 = function(base64) {
 		var
@@ -68,9 +70,8 @@ if (Uint8Array) {
 		, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51
 	]);
 }
-if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
-	HTMLCanvasElement.prototype.toBlob = HTMLCanvasElement.prototype.toBlobHD =
-	function(callback, type /*, ...args*/) {
+if (HTMLCanvasElement && !canvas_proto.toBlob) {
+	canvas_proto.toBlob = function(callback, type /*, ...args*/) {
 		  if (!type) {
 			type = "image/png";
 		} if (this.mozGetAsFile) {
@@ -79,7 +80,7 @@ if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
 		}
 		var
 			  args = Array.prototype.slice.call(arguments, 1)
-			, dataURI = this.toDataURL.apply(this, args)
+			, dataURI = this[to_data_url].apply(this, args)
 			, header_end = dataURI.indexOf(",")
 			, data = dataURI.substring(header_end + 1)
 			, is_base64 = is_base64_regex.test(dataURI.substring(0, header_end))
@@ -104,5 +105,16 @@ if (HTMLCanvasElement && !HTMLCanvasElement.prototype.toBlob) {
 		}
 		callback(blob);
 	};
+
+	if (canvas_proto.toDataURLHD) {
+		canvas_proto.toBlobHD = function() {
+			to_data_url = "toDataURLHD";
+			var blob = this.toBlob();
+			to_data_url = "toDataURL";
+			return blob;
+		}
+	} else {
+		canvas_proto.toBlobHD = canvas_proto.toBlob;
+	}
 }
 }(self));
