@@ -18,7 +18,7 @@
 var
 	  Uint8Array = view.Uint8Array
 	, HTMLCanvasElement = view.HTMLCanvasElement
-	, canvas_proto = HTMLCanvasElement || HTMLCanvasElement.prototype
+	, canvas_proto = HTMLCanvasElement.prototype || HTMLCanvasElement
 	, is_base64_regex = /\s*;\s*base64\s*(?:;|$)/i
 	, to_data_url = "toDataURL"
 	, base64_ranks
