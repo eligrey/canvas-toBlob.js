@@ -77,7 +77,11 @@ if (HTMLCanvasElement && !canvas_proto.toBlob) {
 		} if (this.mozGetAsFile) {
 			callback(this.mozGetAsFile("canvas", type));
 			return;
+		} if (this.msToBlob && type === "image/png") {
+			callback(this.msToBlob());
+			return;
 		}
+
 		var
 			  args = Array.prototype.slice.call(arguments, 1)
 			, dataURI = this[to_data_url].apply(this, args)
