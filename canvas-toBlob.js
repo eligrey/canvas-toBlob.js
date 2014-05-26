@@ -77,7 +77,7 @@ if (HTMLCanvasElement && !canvas_proto.toBlob) {
 		} if (this.mozGetAsFile) {
 			callback(this.mozGetAsFile("canvas", type));
 			return;
-		} if (this.msToBlob && type === "image/png") {
+		} if (this.msToBlob && /^\s*image\/png\s*(?:$|;)/i.test(type)) {
 			callback(this.msToBlob());
 			return;
 		}
