@@ -4,7 +4,7 @@
  * 
  * By Eli Grey, http://eligrey.com and Devin Samarin, https://github.com/eboyjr
  * License: X11/MIT
- *   See LICENSE.md
+ *   See https://github.com/eligrey/canvas-toBlob.js/blob/master/LICENSE.md
  */
 
 /*global self */
