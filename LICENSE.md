@@ -28,4 +28,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 
   [1]: http://eligrey.com
-  [2]: https://github.com/eboyjr
+  [2]: https://github.com/dsamarin
