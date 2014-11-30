@@ -6,7 +6,7 @@ canvas-toBlob.js implements the standard HTML5 [`canvas.toBlob()`][1] and
 requires `Blob` support to function, which is not present in all browsers. [Blob.js][2]
 is a cross-browser `Blob` implementation that solves this.
 
-Supported Browsers
+Supported browsers
 ------------------
 
 canvas-toBlob.js has [the same browser support as FileSaver.js][3].
