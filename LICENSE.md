@@ -1,7 +1,7 @@
-This software is licensed under the MIT/X11 license.
+This software is licensed under the MIT license.
 
-MIT/X11 license
----------------
+MIT license
+-----------
 
 Copyright &copy; 2011 [Eli Grey][1] and [Devin Samarin][2].
 
