@@ -3,7 +3,7 @@
  * 2013-12-27
  * 
  * By Eli Grey, http://eligrey.com and Devin Samarin, https://github.com/eboyjr
- * License: X11/MIT
+ * License: MIT
  *   See https://github.com/eligrey/canvas-toBlob.js/blob/master/LICENSE.md
  */
 
