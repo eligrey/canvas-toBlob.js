@@ -3,7 +3,7 @@ This software is licensed under the MIT license.
 MIT license
 -----------
 
-Copyright &copy; 2011 [Eli Grey][1] and [Devin Samarin][2].
+Copyright &copy; 2016 [Eli Grey][1] and [Devin Samarin][2].
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

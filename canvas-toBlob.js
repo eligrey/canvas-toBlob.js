@@ -1,6 +1,6 @@
 /* canvas-toBlob.js
  * A canvas.toBlob() implementation.
- * 2013-12-27
+ * 2016-05-26
  * 
  * By Eli Grey, http://eligrey.com and Devin Samarin, https://github.com/eboyjr
  * License: MIT
@@ -70,7 +70,8 @@ if (Uint8Array) {
 		, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51
 	]);
 }
-if (HTMLCanvasElement && !canvas_proto.toBlob) {
+if (HTMLCanvasElement && (!canvas_proto.toBlob || !canvas_proto.toBlobHD)) {
+	if (!canvas_proto.toBlob)
 	canvas_proto.toBlob = function(callback, type /*, ...args*/) {
 		  if (!type) {
 			type = "image/png";
@@ -110,7 +111,7 @@ if (HTMLCanvasElement && !canvas_proto.toBlob) {
 		callback(blob);
 	};
 
-	if (canvas_proto.toDataURLHD) {
+	if (!canvas_proto.toBlobHD && canvas_proto.toDataURLHD) {
 		canvas_proto.toBlobHD = function() {
 			to_data_url = "toDataURLHD";
 			var blob = this.toBlob();
