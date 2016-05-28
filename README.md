@@ -9,10 +9,13 @@ is a cross-browser `Blob` implementation that solves this.
 Supported browsers
 ------------------
 
-canvas-toBlob.js has [the same browser support as FileSaver.js][3].
+| Feature                 | Chrome | Firefox (Gecko) | Internet Explorer | Opera | Safari         |
+|-------------------------|--------|-----------------|-------------------|-------|----------------|
+| Basic support           | 50     | 19              | 10 -ms            | 37    | polyfill [[1][3]] |
+| Image quality parameter | 50     | 25              | polyfill          | 37    | polyfill       |
 
 ![Tracking image](https://in.getclicky.com/212712ns.gif)
 
   [1]: http://www.w3.org/TR/html5/the-canvas-element.html
   [2]: https://github.com/eligrey/Blob.js
-  [3]: https://github.com/eligrey/FileSaver.js#supported-browsers
+  [3]: https://bugs.webkit.org/show_bug.cgi?id=71270
