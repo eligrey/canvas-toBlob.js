@@ -1,0 +1,24 @@
+{
+  "name": "canvas-toblob.js",
+  "version": "1.0.0",
+  "description": "A canvas.toBlob() implementation",
+  "main": "canvas-toBlob.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eligrey/canvas-toBlob.js.git"
+  },
+  "keywords": [
+    "canvas",
+    "toBlob",
+    "toBlobHD"
+  ],
+  "author": "eligrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eligrey/canvas-toBlob.js/issues"
+  },
+  "homepage": "https://github.com/eligrey/canvas-toBlob.js#readme"
+}
