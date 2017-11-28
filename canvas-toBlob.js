@@ -93,7 +93,7 @@ if (HTMLCanvasElement && (!canvas_proto.toBlob || !canvas_proto.toBlobHD)) {
 		;
 		if (Blob.fake) {
 			// no reason to decode a data: URI that's just going to become a data URI again
-			blob = new Blob
+			blob = new Blob;
 			if (is_base64) {
 				blob.encoding = "base64";
 			} else {
